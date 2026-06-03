@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: chipguard-ai-backend
+    runtime: python
+    buildCommand: ""
+    startCommand: gunicorn app.main:app --config gunicorn_conf.py
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ENVIRONMENT
+        value: production
+      - key: CORS_ORIGINS
+        value: https://chipguard-ai.vercel.app

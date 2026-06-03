@@ -29,5 +29,8 @@ build/
 # Alembic
 *.pyc
 
+# Database
+*.db
+
 # Data
 data/*.csv
